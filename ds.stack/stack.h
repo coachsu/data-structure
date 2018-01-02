@@ -11,7 +11,7 @@ typedef struct stack {
 //typedef Node* Node;
 //LSNode top = NULL;
 
-extern void push(Stack, int);
-extern int pop(Stack);
-extern int isStackEmpty(Stack);
-extern void printStack(Stack);
+extern void push(Stack*, int);
+extern int pop(Stack*);
+extern int isStackEmpty(Stack*);
+extern void printStack(Stack*);

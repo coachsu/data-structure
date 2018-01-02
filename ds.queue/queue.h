@@ -13,7 +13,7 @@ typedef struct queue {
 //LQNode front = NULL;
 //LQNode rear = NULL;
 
-extern void enQueue(Queue, int);
-extern int deQueue(Queue);
-extern int isQueueEmpty(Queue);
-void printQueue(Queue);
+extern void enQueue(Queue*, int);
+extern int deQueue(Queue*);
+extern int isQueueEmpty(Queue*);
+void printQueue(Queue*);
