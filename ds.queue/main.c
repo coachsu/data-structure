@@ -4,17 +4,44 @@
 
 int main(void) {
 	Queue *q = (Queue*)malloc(sizeof(Queue));
-	enQueue(q, 2);
-	printQueue(q);
-	enQueue(q, 5);
-	printQueue(q);
-	enQueue(q, 4);
-	printQueue(q);
 
-	printf("Dequeue: %d\n", deQueue(q));
-	printQueue(q);
+	int op = 3;
+	int data;
+	
+	while(op != 0) {
+		printf("Operations: (0) exit ; (1) enqueue ; (2) dequeue ; (3) print ? ");
+		scanf("%d", &op);
+
+		switch(op) {
+		case 0:
+			printf("Bye\n");			
+			break;
+
+		case 1:
+			printf("Data enqueued: ");
+			scanf("%d", &data);
+			enQueue(q, data);
+			break;
+
+		case 2:
+			if(isQueueEmpty(q))
+				printf("Queue is empty.\n");
+			else
+				printf("Data dequeued: %d\n", deQueue(q));
+			break;
+
+		case 3:
+			printQueue(q);
+			break;
+
+		default:
+			printf("Command not found.\n");
+			break;
+
+		}
+	} 
 
 	free(q);
 
-	return 1;
+	return EXIT_SUCCESS;
 }
